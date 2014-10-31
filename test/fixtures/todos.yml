@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  time_left: 1
+  complete: 1
+  list_id: 
+
+two:
+  description: MyText
+  time_left: 1
+  complete: 1
+  list_id: 
