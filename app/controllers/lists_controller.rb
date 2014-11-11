@@ -1,19 +1,27 @@
 class ListsController < ApplicationController
-  def show
-    @lists = List.all
-    #@list = List.find(params[:id])
-  end
-
-  def new
-    @list = List.new
-  end
-
+  
   def index
     @lists = List.visible_to(current_user)
   end
 
+  def show
+    # show current user's list
+    #Render a form that will collect useful params to create a new Todo (GET)
+    @user = current_user
+    @list = List.find(params[:id])
+    @todo = Todo.new
+    @todos = @list.todos
+  end
+
+  def new
+    # do I even need this when I have create?
+    @list = List.new
+  end
+
+  # need to associate the list to the user in the create action itself 
   def create
-    @list = List.new(params.require(:list).permit(:user_id))
+    #associate the new list with a user
+    @list = List.new(user_id: current_user.id)
     if @list.save
       flash[:notice] = "Your to do list was created."
       redirect_to @list

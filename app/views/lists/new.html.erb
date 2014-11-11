@@ -1,6 +1,8 @@
 <h1>Create a To Do List</h1>
 <p>Would you like to create a new to do list?</p>
 
-<div class="form-group">
-  <%= link_to "Create List", @list, class: 'btn btn-success' %>
-</div>
+<%= form_for List.new do |f| %>
+  <div class="form-group">
+    <%= f.submit "Create List", class: 'btn btn-success' %>
+  </div>
+<% end %>

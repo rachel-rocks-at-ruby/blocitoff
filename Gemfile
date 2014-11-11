@@ -13,6 +13,8 @@ gem 'rails', '4.1.6'
    gem 'sqlite3'
  end
 
+gem 'pry'
+
 gem 'bootstrap-sass', '~> 3.1.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -49,3 +51,4 @@ gem 'spring',        group: :development
 
 gem 'devise'
 gem 'figaro', '1.0'
+gem 'whenever', :require => false

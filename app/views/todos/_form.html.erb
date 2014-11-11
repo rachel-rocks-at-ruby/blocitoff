@@ -1,0 +1,14 @@
+ <%= form_for [list, todo] do |f| %>
+   <div class='row'>
+    <div class='col-md-8'>
+      <%= f.label 'Add your to-do:' %>
+      <%= f.text_field :description %>
+    </div>
+  </div>
+
+    <!-- <div class='col-md-2'><b>7</b></div> 
+    <div class='col-md-2'><b> 
+  </b> -->
+ 
+   <%= f.submit "Save", class: 'btn btn-success' %>
+ <% end %>
