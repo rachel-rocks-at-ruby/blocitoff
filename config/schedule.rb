@@ -1,3 +1,3 @@
 every :day do
-  rake "delete_items"
+  rake "delete_todos"
 end
