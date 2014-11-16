@@ -1,4 +1,5 @@
 class TodosController < ApplicationController
+  respond_to :html, :js
 
   def new#Render a form that will collect useful params (GET)
     @todo = Todo.new
@@ -19,13 +20,8 @@ class TodosController < ApplicationController
     end
   end
 
-  def create#Sole responsibility is to store params as a Todo into the database (POST)
-    #You have access to params[:list_id]
-
-=begin
-Your immediate goal is to make todos save with a list_id.  Everything else is a distraction.
-DID IT. Now why isn't it showing on the right list...?
-=end
+  def create
+  #Sole responsibility is to store params as a Todo into the database (POST)
 
     @list = List.find(params[:list_id])
     @todo = Todo.new(params.require(:todo).permit(:description, :time_left, :complete))
@@ -41,15 +37,18 @@ DID IT. Now why isn't it showing on the right list...?
   end
 
   def destroy
-     @list = List.find(params[:id])
+    #you have params: list_id and id
+     @list = List.find(params[:list_id])
      @todo = Todo.find(params[:id])
  
      if @todo.destroy
-       flash[:notice] = "\"#{description}\" was deleted successfully."
-       redirect_to @list
+       flash[:notice] = "\"#{@todo.description}\" was deleted successfully."
      else
        flash[:error] = "There was an error deleting the to do."
-       redirect_to @list
+     end
+
+     respond_with(@todo) do |format|
+       format.html { redirect_to @todo.list }
      end
   end
 

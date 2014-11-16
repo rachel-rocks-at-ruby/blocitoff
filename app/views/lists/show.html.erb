@@ -15,3 +15,13 @@
 
 <!-- List of todos already entered -->
 <%= render partial: 'todos/todo', collection: @todos %>
+
+
+<script>
+  $(".make-delete").click(function(){
+
+    list_id = $(this).data("list-id")
+    id = $(this).data("id")
+    $.ajax("/lists/"+list_id+"/todos/"+id+".js", {method: "DELETE"})
+  })
+</script>

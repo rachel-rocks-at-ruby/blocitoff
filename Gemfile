@@ -14,6 +14,7 @@ gem 'rails', '4.1.6'
  end
 
 gem 'pry'
+gem 'quiet_assets'
 
 gem 'bootstrap-sass', '~> 3.1.1'
 # Use SCSS for stylesheets

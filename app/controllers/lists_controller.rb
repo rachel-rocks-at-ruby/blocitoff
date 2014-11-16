@@ -14,11 +14,9 @@ class ListsController < ApplicationController
   end
 
   def new
-    # do I even need this when I have create?
     @list = List.new
   end
 
-  # need to associate the list to the user in the create action itself 
   def create
     #associate the new list with a user
     @list = List.new(user_id: current_user.id)
