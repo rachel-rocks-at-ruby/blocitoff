@@ -78,6 +78,4 @@ Rails.application.configure do
 
   # http://pure-river-3098.herokuapp.com
   config.action_mailer.default_url_options = { host: 'pure-river-3098.herokuapp.com' }
-
-  config.gem 'javan-whenever', :lib => false, :source => 'http://gems.github.com'
 end
