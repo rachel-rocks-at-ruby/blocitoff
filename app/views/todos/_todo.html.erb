@@ -1,17 +1,14 @@
-
-
 <div id= "fubar<%= todo.id %>">
-  <div class='col-md-8'>
+  <div class='col-md-6'>
     <%= todo.description %>
   </div>
 
-  <div class='col-md-2'>
-    <%#= todo.days_left %>
-    <!-- Time.now - 7.days -->
+  <div class='col-md-2', align='left'>
+    <%= todo.time_left %> days
   </div>
 
   <!-- If todo is checked, then remove -->
-  <div class='col-md-2'>
+  <div class='col-md-2', align='center'>
     <%= check_box(todo, :complete, checked_value: "1", unchecked_value: "0", class: "make-delete", :"data-list-id" => todo.list.id, :"data-id" => todo.id) %>
   </div>
 </div>
