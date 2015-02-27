@@ -1,10 +1,6 @@
 class ListsController < ApplicationController
   
-  # def index
-  #   @lists = List.visible_to(current_user)
-  # end
-
-  def new
+def new
     @list = List.new
   end
 
