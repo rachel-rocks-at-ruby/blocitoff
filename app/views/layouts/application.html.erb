@@ -11,8 +11,8 @@
   <div class="container">
     <ul class="nav nav-tabs">
       <li><%= link_to "Home", welcome_index_path %></li>
-        <% if user_signed_in? && current_user.lists.exists? %>
-             <li><%= link_to "My To Do List", list_path(current_user.lists.first)  %></li>
+        <% if current_user && current_user.has_list? %>
+             <li><%= link_to "My To Do List", list_path(current_user.list)  %></li>
          <% end %>  
          <div class="pull-right user-info">
            <% if current_user %>

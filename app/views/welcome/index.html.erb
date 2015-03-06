@@ -1,7 +1,7 @@
 <br/>
 <div class="jumbotron">
-  <h1>Bloccitoff</h1>
-  <p><%= link_to "Create a self-destructing to-do list!", new_list_path %></p>
-
-</div>
+<h1>Bloccitoff</h1>
+  <% if current_user %>
+  	<p><%= link_to "Create a self-destructing to-do list!", new_list_path unless current_user.has_list? %></p>
+  <% end %>
 </div>
