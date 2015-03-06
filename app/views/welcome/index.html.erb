@@ -1,7 +1,10 @@
 <br/>
 <div>
+<p class="lead"> 
+	Create a to-do list. Mark your items off as complete, or they self-destruct after seven days.
+</p>
 <% if current_user %>
 	<p><%= link_to "Create a self-destructing to-do list!", new_list_path unless current_user.has_list? %></p>
 <% end %>
-<%= image_tag 'beachwtext.jpg' %>
+<%= image_tag 'beachwtext.jpg' %> 
 </div>
